@@ -5,8 +5,8 @@ using UnityEngine;
 public class LevelUp : MonoBehaviour
 {
     public int pointsToAdd;
-    public bool ready = false;
-    public bool ask = false;
+    public static bool ready = false;
+    public static bool ask = false;
     public CharacterHandler charH;
 
     public int tempStrength = 0, tempDexterity = 0, tempConstitution = 0, tempInteligence = 0, tempWisdom = 0, tempCharisma = 0;
@@ -23,7 +23,7 @@ public class LevelUp : MonoBehaviour
         {
             ask = true;
         }
-        if (Input.GetKeyDown(KeyCode.I) && ask)
+        if (Input.GetKeyDown(KeyCode.I) && ask && !Inventory.showInv && !PauseMenu.paused)
         {
             ready = true;
         }
@@ -41,6 +41,7 @@ public class LevelUp : MonoBehaviour
         }
         if (ready)
         {
+            ask = false;
             Time.timeScale = 0;
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
@@ -218,6 +219,7 @@ public class LevelUp : MonoBehaviour
                     ready = false;
                     Cursor.visible = false;
                     Cursor.lockState = CursorLockMode.Locked;
+                     Time.timeScale = 1;
                 }
         }
     }

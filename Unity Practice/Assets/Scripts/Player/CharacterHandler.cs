@@ -153,8 +153,9 @@ public class CharacterHandler : MonoBehaviour
         //set up our aspect ratio for the GUI elements
         float scrW = Screen.width / 16;
         float scrH = Screen.height / 9;
-        if (!PauseMenu.paused)
+        if (!PauseMenu.paused && !Inventory.showInv && !LevelUp.ready)
         {
+            
             //GUI Box on screen for the healthbar background
             GUI.Box(new Rect(scrW * 6, scrH * 0.25f, scrW * 4, scrH * 0.5f), "", healthColorBackground);
             //GUI Box for current health that moves in same place as the background bar
@@ -174,6 +175,10 @@ public class CharacterHandler : MonoBehaviour
             GUI.DrawTexture(new Rect(13.75f * scrW, 0.25f * scrH, 2 * scrW, 2 * scrH), miniMap);
 
             GUI.Box(new Rect(scrW * 8, scrH * 4.5f, scrW * 0.1f, scrH * 0.1f), "");
+        }
+        else
+        {
+            LevelUp.ask = false;
         }
     }
 

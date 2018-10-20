@@ -48,22 +48,10 @@ public class PauseMenu : MonoBehaviour
         {
             
             TogglePause();
-            
         }
         else if (Input.GetKeyDown(KeyCode.Escape) && showOptions)
         {
             ToggleOptions();
-        }
-
-        if (paused)
-        {
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.Confined;
-        }
-        else
-        {
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
         }
     }
     public void TogglePause()
@@ -73,22 +61,28 @@ public class PauseMenu : MonoBehaviour
             Time.timeScale = 1;
             paused = false;
             pauseMenu.SetActive(false);
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
         }
         else if (paused && showOptions)
         {
             ToggleOptions();
-            
         }
-        else if (paused && !showOptions && Inventory.showInv)
+        else if (Inventory.showInv)
         {
-            paused = false;
-            pauseMenu.SetActive(true);
+            Inventory.ToggleInv();
+        }
+        else if (LevelUp.ready)
+        {
+            LevelUp.ready = false;
         }
         else
         {
             Time.timeScale = 0;
             paused = true;
             pauseMenu.SetActive(true);
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.Confined;
         }
     }
     public void ToggleOptions()

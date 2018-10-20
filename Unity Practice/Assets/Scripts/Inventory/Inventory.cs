@@ -20,24 +20,21 @@ public class Inventory : MonoBehaviour
         inv.Add(ItemData.CreateItem(401));
         inv.Add(ItemData.CreateItem(102));
         inv.Add(ItemData.CreateItem(301));
-        inv.Add(ItemData.CreateItem(301));
         inv.Add(ItemData.CreateItem(2));
         inv.Add(ItemData.CreateItem(404));
-
-        for (int i = 0; i < inv.Count; i++)
-        {
-            Debug.Log(inv[i].Name);
-        }
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            ToggleInv();
+            if (!PauseMenu.paused && !LevelUp.ready)
+            {
+                ToggleInv();
+            }
         }
     }
-    public bool ToggleInv()
+    public static bool ToggleInv()
     {
         if (showInv)
         {
@@ -52,7 +49,7 @@ public class Inventory : MonoBehaviour
             showInv = true;
             Time.timeScale = 0;
             Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.lockState = CursorLockMode.None;
             return (true);
         }
     }
@@ -62,6 +59,7 @@ public class Inventory : MonoBehaviour
         {
             if (showInv)
             {
+                LevelUp.ask = false;
                 if (scr.x != Screen.width / 16 || scr.y != Screen.height / 9)
                 {
                     scr.x = Screen.width / 16;
@@ -73,7 +71,7 @@ public class Inventory : MonoBehaviour
                 {
                     for (int i = 0; i < inv.Count; i++)
                     {
-                        if (GUI.Button(new Rect(0.5f * scr.x, 0.25f * scr.y + i * (0.25f * scr.y), 3 * scr.x, 0.25f * scr.y), inv[i].Name))
+                        if (GUI.Button(new Rect(1.5f * scr.x, 1.5f * scr.y + i * (0.25f * scr.y), 3 * scr.x, 0.25f * scr.y), inv[i].Name))
                         {
                             selectedItem = inv[i];
                             Debug.Log(selectedItem.Name);
