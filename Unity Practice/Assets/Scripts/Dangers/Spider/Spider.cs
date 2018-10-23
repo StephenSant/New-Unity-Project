@@ -12,7 +12,6 @@ public class Spider : Enemy
     public float attackCoolDown = 1;
     public int addExp = 1;
     public Transform wanderMarker;
-    public Transform home;
     public float allowedDisFromHome;
 
 
@@ -28,7 +27,6 @@ public class Spider : Enemy
     private State currentState = State.Wander;
     private float disToTarget;
     private float cooldown;
-    private float homeRadius;
 
     private void Start()
     {
@@ -80,7 +78,6 @@ public class Spider : Enemy
                 break;
         }
         disToTarget = Vector3.Distance(transform.position, target.position);
-        homeRadius = Vector3.Distance(transform.position, home.position);
         if (takeDamage.damageTake != 0)
         {
             health -= takeDamage.damageTake;

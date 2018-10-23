@@ -1793,7 +1793,6 @@ MonoBehaviour:
   attackCoolDown: 0.5
   addExp: 1
   wanderMarker: {fileID: 4536685398756658}
-  home: {fileID: 0}
   allowedDisFromHome: 10
   anim: {fileID: 0}
   target: {fileID: 0}

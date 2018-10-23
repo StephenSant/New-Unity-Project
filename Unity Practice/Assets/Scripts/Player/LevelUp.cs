@@ -60,16 +60,16 @@ public class LevelUp : MonoBehaviour
                 }
 
             }
-            if(GUI.Button(new Rect(8.25f * scrW, scrH + i * (0.5f * scrH), 0.25f * scrW, 0.5f * scrH), "+"))
+            if (GUI.Button(new Rect(8.25f * scrW, scrH + i * (0.5f * scrH), 0.25f * scrW, 0.5f * scrH), "+"))
             {
-                if (pointsToAdd > 0 && (charH.strength+tempStrength) < 10)
+                if (pointsToAdd > 0 && (charH.strength + tempStrength) < 10)
                 {
                     tempStrength++;
                     pointsToAdd--;
                 }
 
             }
-            
+
 
             GUI.Box(new Rect(8.5f * scrW, scrH + i * (0.5f * scrH), 1.5f * scrW, 0.5f * scrH), "currently: " + charH.strength);
             if (charH.strength >= 10)
@@ -207,20 +207,20 @@ public class LevelUp : MonoBehaviour
                 GUI.Box(new Rect(10f * scrW, scrH + i * (0.5f * scrH), 1.25f * scrW, 0.5f * scrH), "Maxed Out!");
             }
             i++;
-                if (GUI.Button(new Rect(7.5f * scrW, scrH + i * (0.5f * scrH)+10, 1f * scrW, 0.5f * scrH), "Done"))
-                {
-                    charH.strength += tempStrength;
-                    charH.dexterity += tempDexterity;
-                    charH.constitution += tempConstitution;
-                    charH.inteligence += tempInteligence;
-                    charH.wisdom += tempWisdom;
-                    charH.charisma += tempCharisma;
-                    ask = false;
-                    ready = false;
-                    Cursor.visible = false;
-                    Cursor.lockState = CursorLockMode.Locked;
-                     Time.timeScale = 1;
-                }
+            if (GUI.Button(new Rect(7.5f * scrW, scrH + i * (0.5f * scrH) + 10, 1f * scrW, 0.5f * scrH), "Done"))
+            {
+                charH.strength += tempStrength;
+                charH.dexterity += tempDexterity;
+                charH.constitution += tempConstitution;
+                charH.inteligence += tempInteligence;
+                charH.wisdom += tempWisdom;
+                charH.charisma += tempCharisma;
+                ask = false;
+                ready = false;
+                Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked;
+                Time.timeScale = 1;
+            }
         }
     }
 }

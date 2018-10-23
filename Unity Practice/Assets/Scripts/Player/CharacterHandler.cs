@@ -116,7 +116,7 @@ public class CharacterHandler : MonoBehaviour
     {
         if (isHealing)
         {
-            curHealth++;
+            curHealth += (Time.deltaTime*2);
         }
         //if our current health is greater than our maximum amount of health
         if (curHealth > maxHealth)
@@ -145,6 +145,7 @@ public class CharacterHandler : MonoBehaviour
         curHealth = maxHealth;//our characters health is equal to full health
         alive = true;//character is alive
         controller.enabled = true;//characters controller is active 
+        Inventory.inv.Clear();
     }
     #endregion
     #region OnGUI
@@ -153,9 +154,9 @@ public class CharacterHandler : MonoBehaviour
         //set up our aspect ratio for the GUI elements
         float scrW = Screen.width / 16;
         float scrH = Screen.height / 9;
-        if (!PauseMenu.paused && !Inventory.showInv && !LevelUp.ready)
+        if (!PauseMenu.paused && !LevelUp.ready && !Inventory.showInv)
         {
-            
+
             //GUI Box on screen for the healthbar background
             GUI.Box(new Rect(scrW * 6, scrH * 0.25f, scrW * 4, scrH * 0.5f), "", healthColorBackground);
             //GUI Box for current health that moves in same place as the background bar
@@ -175,6 +176,14 @@ public class CharacterHandler : MonoBehaviour
             GUI.DrawTexture(new Rect(13.75f * scrW, 0.25f * scrH, 2 * scrW, 2 * scrH), miniMap);
 
             GUI.Box(new Rect(scrW * 8, scrH * 4.5f, scrW * 0.1f, scrH * 0.1f), "");
+        }
+        else if (Inventory.showInv)
+        {
+            GUI.Box(new Rect(scrW * 6, scrH * 1.25f, scrW * 4, scrH * 0.5f), "", healthColorBackground);
+            GUI.Box(new Rect(scrW * 6, scrH * 1.25f, curHealth * (scrW * 4) / maxHealth, scrH * 0.5f), "", healthColor);
+
+            GUI.Box(new Rect(scrW * 6, scrH * 1.75f, scrW * 4, scrH * 0.25f), "", expColorBackground);
+            GUI.Box(new Rect(scrW * 6, scrH * 1.75f, curExp * (scrW * 4) / maxExp, scrH * 0.25f), "", expColor);
         }
         else
         {

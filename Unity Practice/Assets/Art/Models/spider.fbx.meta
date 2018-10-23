@@ -125,6 +125,7 @@ ModelImporter:
     7400004: jump
     7400006: attack
     7400008: die
+    7400010: die (1)
     9500000: //RootNode
     13700000: mesh
   externalObjects:
@@ -161,10 +162,10 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: idle
-      takeName: idle
-      firstFrame: 1
-      lastFrame: 60
+      name: die (1)
+      takeName: die
+      firstFrame: 151
+      lastFrame: 165
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -903,7 +904,7 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 0
-    previousCalculatedGlobalScale: 0.001
+    previousCalculatedGlobalScale: 0.005
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
@@ -924,7 +925,6 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 0

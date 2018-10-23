@@ -307,6 +307,7 @@ GameObject:
   - component: {fileID: 114611681515839354}
   - component: {fileID: 114862084560253950}
   - component: {fileID: 114708849883587018}
+  - component: {fileID: 114578598829897804}
   m_Layer: 9
   m_Name: Player 1
   m_TagString: Player
@@ -1380,6 +1381,87 @@ MonoBehaviour:
   player: {fileID: 1602493853953488}
   mainCam: {fileID: 1285345375827110}
   attackDamage: 10
+--- !u!114 &114578598829897804
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1602493853953488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df22dcde87c6e974e8555de63e2980ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  money: 0
+  style:
+    m_Name: 
+    m_Normal:
+      m_Background: {fileID: 2800000, guid: 99d6b15933d643847ace90c958a0f8c4, type: 3}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Hover:
+      m_Background: {fileID: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Active:
+      m_Background: {fileID: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Focused:
+      m_Background: {fileID: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnNormal:
+      m_Background: {fileID: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnHover:
+      m_Background: {fileID: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnActive:
+      m_Background: {fileID: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnFocused:
+      m_Background: {fileID: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Border:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Margin:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Padding:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Overflow:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Font: {fileID: 0}
+    m_FontSize: 100
+    m_FontStyle: 1
+    m_Alignment: 1
+    m_WordWrap: 0
+    m_RichText: 1
+    m_TextClipping: 0
+    m_ImagePosition: 0
+    m_ContentOffset: {x: 0, y: 0}
+    m_FixedWidth: 0
+    m_FixedHeight: 0
+    m_StretchWidth: 0
+    m_StretchHeight: 0
+  scr: {x: 0, y: 0}
+  scrollPos: {x: 0, y: 0}
 --- !u!114 &114611681515839354
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1422,8 +1504,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointsToAdd: 0
-  ready: 0
-  ask: 0
   charH: {fileID: 0}
   tempStrength: 0
   tempDexterity: 0
@@ -1469,7 +1549,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alive: 0
-  pauseMenu: {fileID: 0}
   controller: {fileID: 143984317964490872}
   movement: {fileID: 114611681515839354}
   checkPoint: {fileID: 114816885391254678}
